@@ -1,0 +1,254 @@
+@import "bourbon";
+@import "./reset";
+
+/*@font-face {
+  font-family: 'caslonItalic';
+  src: url('../../assets/LibreCaslonText-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'caslonRegular';
+  src: url('../../assets/LibreCaslonText-Regular.ttf');
+}
+*/
+
+@font-face {
+  font-family: 'caslonItalic';
+  src: url('../../assets/fonts/ACaslonPro-Italic.woff2') format('woff2'),
+       url('../../assets/fonts/ACaslonPro-Italic.woff') format('woff'),
+       url('../../assets/fonts/ACaslonPro-Italic.otf')  format('opentype'),
+       url('../../assets/fonts/ACaslonPro-Italic.ttf')  format('truetype'),
+       url('../../assets/fonts/ACaslonPro-Italic.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'caslonRegular';
+  src: url('../../assets/fonts/ACaslonPro-Regular.woff2') format('woff2'),
+       url('../../assets/fonts/ACaslonPro-Regular.woff') format('woff'),
+       url('../../assets/fonts/ACaslonPro-Regular.otf')  format('opentype'),
+       url('../../assets/fonts/ACaslonPro-Regular.ttf')  format('truetype'),
+       url('../../assets/fonts/ACaslonPro-Regular.svg') format('svg');
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	font-family: "Times New Roman", "Times", serif;
+	font-size: 14px;
+	line-height: 22px;
+	background-color: white;
+	-webkit-tap-highlight-color: white;
+}
+
+a:link{
+	color: white;
+}
+
+a:active{
+	color: white;
+}
+
+a:visited{
+	color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+#linkList{
+	width: 250px;
+	display: inline-block;
+	padding: 40px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	z-index:1;
+}
+
+#info{
+	display: inline-block;
+	display: none;
+	float: left;
+	padding: 40px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	/*line-height: 100%;*/
+	background-color: rgba(20,20,20,0.8);
+
+}
+
+
+#infoText a:hover{
+	color: black;
+}
+
+#infoText{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	height: 130px;
+	font-family: caslonRegular;
+	font-size: 18px;
+	line-height: 24px;
+	color:rgb(200,200,200);
+}
+
+
+#infoLink{
+	padding-top: 20px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#close{
+	cursor: pointer;
+	text-decoration: underline;
+	color: red;
+}
+
+#frameBox{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#projects{
+	/*width:100%;*/
+	/*margin: 0 auto;*/
+/*	text-align: center;
+	display: inline-block;*/
+	/*margin-left:auto;*/
+	/*margin-right:auto;*/
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	/*padding-left: 20px;*/
+	/*pa
+	dding-right: 20px;*/
+	background-color: white;
+}
+
+#projects{
+	/*transform: rotateX(-10deg);*/
+	/*transform-style: preserve-3d;*/
+	/*perspective-origin: 0% 0%;*/
+}
+
+.projectBox{
+	/*clear: both;*/
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	
+}
+
+
+.videoDiv {
+	width: 358px;
+	height: 208px;
+	margin: 50px;
+	overflow: hidden;
+	/*transform: rotateX(50deg);*/
+	/*animation:spin 120s linear infinite;*/
+/*	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;*/
+	position: relative;
+}
+
+
+.titleBar{
+	position: absolute;
+	color: white;
+	z-index: 11;
+	font-family: caslonRegular;
+	visibility: hidden;
+	text-decoration: underline;
+	mix-blend-mode: exclusion;
+	font-size: 24px;
+	width: 100%;
+	height: 100%;
+	/*transform: translate(-50%, 0%);*/
+	text-align: center;
+	line-height: 208px;
+}
+
+#home{
+	font-size: 24px;
+	position: fixed;
+	top: 40px;
+	/*left: 30px;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 100%;
+	font-family: caslonItalic;
+	/*font-weight: bold;*/
+	font-style: italic;
+	mix-blend-mode: exclusion;
+	z-index: 10;
+	cursor: default;
+	color: rgb(255,255,255);
+}
+
+
+#link{
+	font-size: 24px;
+	/*background-color: rgb(5,5,5);*/
+	width: 75px;
+	/*height: 30px;*/
+	/*padding: 5px;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: fixed;
+	bottom: 40px;
+	right: 0;
+	left: 0;
+	/*right: 30px;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	/*width: 100%;*/
+	font-family: caslonItalic;
+	/*font-weight: bold;*/
+	font-style: italic;
+	mix-blend-mode: exclusion;
+	z-index: 100;
+	color: white;
+	cursor: pointer;
+}
+
+#link a{
+	color: rgb(255,255,255);
+}
+
+#email{
+	color: white;
+}
+
+
+/*#infoBox{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	z-index: -1;
+}*/
