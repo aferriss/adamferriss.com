@@ -52,9 +52,9 @@ var jxhr = $.getJSON('assets/projects.json', function(data){
 
 	projects.forEach(function(i){
 		if(!mobile){
-			projBoxes.push('<div class="videoDiv"><div class="titleBar">' + i.name + '</div><a href="' + i.url + '"><video loop poster="' + i.poster + ' "src="'+i.video+'"></video></a></div>');
+			projBoxes.push('<div class="videoDiv"><a href="'+i.url+'"><div class="titleBar">' + i.name + '</div></a><a href="' + i.url + '"><video loop poster="' + i.poster + ' "src="'+i.video+'"></video></a></div>');
 		} else {
-			projBoxes.push('<div class="videoDiv"><div class="titleBar">' + i.name + '</div><a href="' + i.url + '"><img  src="' + i.poster + '"/></a></div>')
+			projBoxes.push('<div class="videoDiv"><a href="'+i.url+'"><div class="titleBar">' + i.name + '</div></a><a href="' + i.url + '"><img  src="' + i.poster + '"/></a></div>')
 		}
 	});
 
@@ -70,13 +70,17 @@ var jxhr = $.getJSON('assets/projects.json', function(data){
 		
 		for(var i = 0; i<vidC.length; i++){
 			vidC[i].onmouseover = function(){
-				this.childNodes[1].childNodes[0].play();
-				this.childNodes[0].style.visibility = 'visible';
+				if(this.childNodes[1].childNodes[0].readyState === 4){
+					this.childNodes[1].childNodes[0].play();
+				}
+				this.childNodes[0].childNodes[0].style.visibility = 'visible';
 			}
 
 			vidC[i].onmouseout = function(){
-				this.childNodes[1].childNodes[0].pause();
-				this.childNodes[0].style.visibility = 'hidden';
+				if(this.childNodes[1].childNodes[0].readyState === 4){
+					this.childNodes[1].childNodes[0].pause();
+				}
+				this.childNodes[0].childNodes[0].style.visibility = 'hidden';
 			}
 
 		}
